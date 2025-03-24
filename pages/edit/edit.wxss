@@ -1,0 +1,90 @@
+.container {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-area {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.option-input {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 16px;
+}
+
+.add-btn {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 0;
+}
+
+.options-list {
+  margin-top: 20px;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.option-text {
+  font-size: 16px;
+  color: #333;
+}
+
+.delete-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffebee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn .iconfont {
+  font-size: 14px;
+  color: #FF5252;
+}
+
+.button-group {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.save-btn {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  background-color: #2196F3;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+}

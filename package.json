@@ -1,0 +1,18 @@
+{
+  "name": "lucky-wheel",
+  "version": "1.0.0",
+  "description": "幸运大转盘微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "dev": "miniprogram-ci preview --project-path ./ --pp ./dist",
+    "build": "miniprogram-ci upload --project-path ./ --pp ./dist",
+    "lint": "eslint ."
+  },
+  "keywords": ["微信小程序", "转盘"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "miniprogram-ci": "^1.9.0"
+  }
+}

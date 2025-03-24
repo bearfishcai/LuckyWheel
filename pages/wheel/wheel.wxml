@@ -1,0 +1,57 @@
+<view class="container">
+  <view class="wheel-container">
+    <!-- 转盘 -->
+    <view class="wheel" style="transform: rotate({{angle}}deg)">
+      <view 
+        class="wheel-sector" 
+        wx:for="{{options}}" 
+        wx:key="index"
+        style="transform: rotate({{360 / options.length * index}}deg)"
+      >
+        <view class="sector-text" style="transform: rotate({{-90 + 360 / options.length * index}}deg)">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <!-- 指针 -->
+    <view class="wheel-pointer">
+      <view class="pointer-stick"></view>
+      <view class="pointer-dot"></view>
+    </view>
+  </view>
+
+  <!-- 结果显示 -->
+  <view class="result" wx:if="{{result}}">结果：{{result}}</view>
+
+  <!-- 操作按钮 -->
+  <view class="button-group">
+    <button class="spin-btn" bindtap="startSpin" disabled="{{rotating || options.length < 2}}">
+      开始旋转
+    </button>
+    <button class="edit-btn" bindtap="toggleEdit">
+      {{isEditing ? '完成编辑' : '编辑选项'}}
+    </button>
+  </view>
+
+  <!-- 编辑区域 -->
+  <view class="edit-area" wx:if="{{isEditing}}">
+    <view class="edit-title">编辑选项</view>
+    <view class="input-row">
+      <input 
+        class="option-input"
+        placeholder="输入选项" 
+        bindinput="onInput"
+        value="{{newOption}}"
+      />
+      <button class="add-btn" bindtap="addOption">添加</button>
+    </view>
+    <view class="options-list">
+      <view class="option-item" wx:for="{{options}}" wx:key="index">
+        <text class="option-text">{{item}}</text>
+        <view class="delete-btn" bindtap="deleteOption" data-index="{{index}}">
+          <text>×</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

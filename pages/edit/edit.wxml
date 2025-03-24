@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="options-list">
+    <view 
+      class="option-item" 
+      wx:for="{{options}}" 
+      wx:key="index"
+    >
+      <input 
+        type="text" 
+        placeholder="请输入选项内容" 
+        value="{{item}}" 
+        bindinput="updateOption"
+        data-index="{{index}}"
+      />
+      <button 
+        class="delete-btn" 
+        bindtap="deleteOption"
+        data-index="{{index}}"
+      >删除</button>
+    </view>
+  </view>
+
+  <button bindtap="addOption">添加选项</button>
+  <button bindtap="saveOptions">保存并返回</button>
+</view>

@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="input-area">
+    <view class="input-row">
+      <input 
+        class="todo-input"
+        placeholder="输入待办事项" 
+        bindinput="onInput"
+        value="{{newTodo}}"
+      />
+      <picker class="time-picker" mode="time" bindchange="setTime">
+        <view class="picker-text">{{selectedTime || '选择时间'}}</view>
+      </picker>
+    </view>
+    
+    <!-- 滑动颜色选择器 -->
+    <view class="color-slider-container">
+      <view class="color-preview" style="background-color: {{selectedColor}}"></view>
+      <slider 
+        class="color-slider" 
+        min="0" 
+        max="{{colors.length - 1}}" 
+        value="{{colorIndex}}" 
+        block-size="24"
+        activeColor="{{selectedColor}}"
+        backgroundColor="#f0f0f0"
+        bindchange="onColorChange"
+      />
+    </view>
+
+    <button bindtap="addTodo">添加</button>
+  </view>
+
+  <view class="todo-list">
+    <block wx:for="{{todos}}" wx:key="index">
+      <view class="todo-item {{item.completed ? 'completed' : ''}}" style="background-color: {{item.color}};">
+        <view class="todo-content">
+          <text class="todo-text">{{item.text}}</text>
+        </view>
+        <view class="todo-right">
+          <text class="todo-time">{{item.time}}</text>
+          <view class="action-buttons">
+            <view class="complete-btn" bindtap="toggleComplete" data-index="{{index}}">
+              <text class="iconfont icon-check"></text>
+            </view>
+            <view class="delete-btn" bindtap="deleteTodo" data-index="{{index}}">
+              <text class="iconfont icon-delete"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

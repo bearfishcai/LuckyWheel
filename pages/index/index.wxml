@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="title">选择功能</view>
+  <view class="module-list">
+    <view class="module-item todo-module" bindtap="navigateToTodo">
+      <image class="module-icon" src="/images/todo.png" mode="aspectFit"></image>
+      <view class="module-info">
+        <text class="module-name">待办事项</text>
+        <text class="module-desc">管理你的日常任务</text>
+      </view>
+    </view>
+    <view class="module-item wheel-module" bindtap="navigateToWheel">
+      <image class="module-icon" src="/images/wheel.png" mode="aspectFit"></image>
+      <view class="module-info">
+        <text class="module-name">幸运大转盘</text>
+        <text class="module-desc">让选择变得有趣</text>
+      </view>
+    </view>
+  </view>
+</view>

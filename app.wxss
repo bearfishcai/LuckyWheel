@@ -1,0 +1,18 @@
+/**app.wxss**/
+page {
+  background-color: #f8f8f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* 图标字体 */
+@font-face {
+  font-family: "iconfont";
+  src: url('data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAAKcAAsAAAAABkQAAAJQAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHFQGYACCcApcdgE2AiQDCAsGAAQgBYRtBzAbigXInpo8KVKrQAEFChQPwdf4/v3O3fd+ICqRaPp0kigSSiKZTCVEohBpZRbq5P9v2r8XqMlFLx0PEFi4DYXi4WnxKEzEw/Xc7b2zc1mGQmWokBZC4vG/p34pL4HMZ1kucw196wIMMA4o0D0wiiygxA1jF7zAjwn0mrOWdrC1dwSVhZ0WiAfX10GVCcuKrNCt0K6YW8RbqHXTc3oNvAm/H/8tFVVJbWbHrh9uWlD5JVxe5qb/pggigHY6R8YiCnFRmTumRYTj0XoN2zbwxVeBX8L5/0+7vhxWf54og+7eBJ6Cmh+SjqXfkKwBUK93JFAA6NX7yb79/P3g+fb9ZvX2/f55/sTFO0WJX0iZIXHDpvv7+/mT+/vp/bvxvf8i+9GOLh2HI8dOnH1Qr1TdOABf1T/wF/hVxr9h5X8KrgAQ3y3LB1D+h0UBwE/5FWuVP6KB/FdpBYFfwmXLVnWqbFllp2qjEFvA7tGYAb16kYN9/v9Dl6XdoduQJEOXWXOyYRdR67OGOl3WUW/R/n59xjAiWjQLFjwgDPpGMuATmbFfZMP+UBv1j3qDQdHrJh4O7DMPrNE4oVyCvqO+ZkGVy0bpC+b7A9HmMqZcmQu+YYrYwzxXK3mKBbEPR/QJYowxwxO6C6IoQVrWxvG8H+R5WVCpGI2AC4HsDvQ6jBWocmLj9fsLmM8vENo4Gal8VHHCbzCKsB7MOxFWlYQFNtV3R9SnQBiGYQz2CLoTiFMRSGVxNqyG9QUE8qXKgqoHVa3jNfWq5wHoZe0WKXKUqNGE3QY7kmVVYWcjYwEA') format('woff2');
+} 
