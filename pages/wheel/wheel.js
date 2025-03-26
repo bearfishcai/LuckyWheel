@@ -1,23 +1,48 @@
+/**
+ * 页面配置对象
+ * @typedef {Object} PageConfig
+ * @property {Object} data - 页面的数据对象
+ * @property {Array} data.options - 转盘的选项列表
+ * @property {boolean} data.rotating - 转盘是否正在旋转的标志
+ * @property {string} data.result - 转盘旋转的结果
+ * @property {number} data.angle - 转盘当前的角度
+ * @property {boolean} data.isEditing - 是否处于编辑状态的标志
+ * @property {string} data.newOption - 新输入的选项内容
+ */
 Page({
+  /**
+   * 页面的初始数据
+   * @type {PageConfig.data}
+   */
   data: {
+    // 初始化选项数组为空
     options: [],
+    // 初始化旋转状态为未旋转
     rotating: false,
+    // 初始化旋转结果为空
     result: '',
+    // 初始化转盘角度为0
     angle: 0,
+    // 初始化编辑状态为未编辑
     isEditing: false,
+    // 初始化新选项输入框为空
     newOption: ''
   },
-
   onLoad() {
     this.loadOptions();
   },
 
   // 加载选项
+  /**
+   * 加载本地存储中的转盘选项
+   * 从本地存储中获取转盘选项，如果没有则初始化为空数组，然后更新页面数据
+   */
   loadOptions() {
+    // 从本地存储中获取名为 'wheelOptions' 的数据，如果不存在则返回空数组
     const options = wx.getStorageSync('wheelOptions') || [];
+    // 使用 setData 方法更新页面数据中的 options 字段
     this.setData({ options });
   },
-
   // 切换编辑状态
   toggleEdit() {
     this.setData({
@@ -53,6 +78,20 @@ Page({
 
     // 保存到本地存储
     wx.setStorageSync('wheelOptions', options);
+    // 添加选项后重新计算扇形角度
+    this.updateSectorAngle();
+  },
+  // 更新扇形角度
+  updateSectorAngle() {
+    const count = this.data.options.length;
+    const sectorAngle = 360 / count;
+    // 更新界面上扇形角度的逻辑
+    const wheelSectors = this.selectAllComponents('.wheel-sector');
+    wheelSectors.forEach((sector, index) => {
+      sector.setData({
+        style: `transform: rotate(${360 / count * index}deg)`
+      });
+    });
   },
 
   // 删除选项
