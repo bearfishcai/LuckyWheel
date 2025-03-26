@@ -20,7 +20,7 @@
   width: 100%;                /* 宽度100% */
   height: 100%;               /* 高度100% */
   border-radius: 50%;         /* 圆形边框 */
-  border: 12px solid #2f3542; /* 深色边框 */
+  border: 1px solid #2f3542; /* 深色边框 */
   position: relative;         /* 相对定位 */
   overflow: hidden;           /* 溢出隐藏 */
   transition: transform 3s ease-out; /* 旋转动画过渡效果 */
@@ -32,13 +32,13 @@
 .wheel-pointer {
   position: absolute;         /* 绝对定位 */
   top: -25px;                 /* 向上偏移25像素 */
-  left: calc(50% + 9px);      /* 水平居中并向右偏移9像素 */
+  left: calc(50% + 2px);      /* 水平居中并向右偏移9像素 */
   transform: translateX(-50%); /* 水平居中 */
   width: 0;                   /* 宽度为0 */
   height: 0;                  /* 高度为0 */
   border-left: 20px solid transparent;    /* 左边透明边框 */
   border-right: 20px solid transparent;   /* 右边透明边框 */
-  border-bottom: 30px solid #ff4757;      /* 底部红色边框形成三角形 */
+  border-bottom: 30px solid#ff0015;      /* 底部红色边框形成三角形 */
   z-index: 2;                 /* 层级2 */
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); /* 阴影效果 */
 }
@@ -46,14 +46,13 @@
 /* 指针杆样式 */
 .pointer-stick {
   position: absolute;         /* 绝对定位 */
-  top: 15px;                  /* 向下偏移15像素 */
-  left: calc(50% + 2px);      /* 水平居中并向右偏移2像素 */
+  top: 17px;                  /* 向下偏移15像素 */
+  left: calc(50% - 1px);
   transform: translateX(-50%); /* 水平居中 */
   width: 8px;                 /* 宽度8像素 */
   height: 150px;              /* 高度150像素 */
-  background-color: #ff4757;  /* 红色背景 */
+  background-color:rgb(255, 0, 21);  /* 红色背景 */
   z-index: 1;                 /* 层级1 */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 阴影效果 */
 }
 
 /* 指针圆点样式 */
@@ -62,9 +61,9 @@
   top: 165px;                 /* 向下偏移165像素 */
   left: calc(50% + 5px);      /* 水平居中并向右偏移5像素 */
   transform: translateX(-50%); /* 水平居中 */
-  width: 24px;                /* 宽度24像素 */
-  height: 24px;               /* 高度24像素 */
-  background-color: #ff4757;  /* 红色背景 */
+  width: 0px;                /* 宽度0像素 */
+  height: 0px;               /* 高度0像素 */
+  background-color:rgb(255, 0, 0);  /* 黑色背景 */
   border-radius: 50%;         /* 圆形边框 */
   z-index: 1;                 /* 层级1 */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 阴影效果 */
@@ -79,37 +78,6 @@
   transform-origin: 50% 50%;  /* 变换原点在中心 */
 }
 
-/* 扇形边框样式 */
-.wheel-sector::before {
-  content: '';                /* 空内容 */
-  position: absolute;         /* 绝对定位 */
-  top: 0;                     /* 顶部对齐 */
-  left: 50%;                  /* 左侧50% */
-  width: 2px;                 /* 宽度2像素 */
-  height: 100%;               /* 高度100% */
-  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
-  transform-origin: 50% 50%;  /* 变换原点在中心 */
-  transform: rotate(90deg);   /* 旋转90度 */
-  z-index: 1;                 /* 层级1 */
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* 阴影效果 */
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 扇形裁剪 */
-}
-
-/* 扇形边框样式 */
-.wheel-sector::after {
-  content: '';                /* 空内容 */
-  position: absolute;         /* 绝对定位 */
-  top: 0;                     /* 顶部对齐 */
-  left: 50%;                  /* 左侧50% */
-  width: 2px;                 /* 宽度2像素 */
-  height: 100%;               /* 高度100% */
-  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
-  transform-origin: 50% 50%;  /* 变换原点在中心 */
-  transform: rotate(-90deg);  /* 旋转-90度 */
-  z-index: 1;                 /* 层级1 */
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* 阴影效果 */
-  clip-path: polygon(50% 50%, 100% 0, 100% 100%); /* 扇形裁剪 */
-}
 
 /* 扇形颜色样式 */
 .wheel-sector:nth-child(1) { background-color: #ff6b81; }  /* 第一个扇形颜色 */
@@ -122,23 +90,19 @@
 /* 扇形文字样式 */
 .sector-text {
   position: absolute;         /* 绝对定位 */
-  left: 50%;                  /* 左侧50% */
-  top: 25%;                   /* 顶部25% */
-  transform-origin: 0 0;      /* 变换原点在左上角 */
-  color: white;               /* 白色文字 */
-  font-size: 16px;            /* 字体大小16像素 */
+  left: 60%;                  /* 左侧50%，使元素水平居中 */
+  top: 40%;                   /* 顶部50%，使元素垂直居中 */
+  transform-origin: 50% 50%;  /* 变换原点在中间 */
+  color: black;               /* 黑色文字 */
+  font-size: 50px;           /* 字体大小16像素 */
   font-weight: bold;          /* 粗体 */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* 文字阴影 */
   white-space: nowrap;        /* 不换行 */
   padding: 0 10px;            /* 左右内边距10像素 */
-  width: 120px;               /* 宽度120像素 */
   text-align: center;         /* 文字居中 */
-  margin-left: -60px;         /* 向左偏移60像素 */
   z-index: 1;                 /* 层级1 */
-  background: rgba(0, 0, 0, 0.2); /* 半透明黑色背景 */
-  border-radius: 4px;         /* 圆角4像素 */
+  border-radius: 6px;         /* 圆角4像素 */
   line-height: 1.4;           /* 行高1.4 */
-  transform: rotate(90deg);   /* 旋转90度 */
+  transform: translate(-50%, -50%);   /* 向左上方移动自身宽高的一半，实现精确居中 */
 }
 
 /* 中心圆样式 */
@@ -147,10 +111,10 @@
   position: absolute;         /* 绝对定位 */
   top: 50%;                   /* 顶部50% */
   left: 50%;                  /* 左侧50% */
-  transform: translate(-50%, -50%); /* 居中定位 */
+  transform: translate(-50%, -50%) rotate(30deg);   /* 先平移到中心，再旋转适当角度 */
   width: 40px;                /* 宽度40像素 */
   height: 40px;               /* 高度40像素 */
-  background-color: #2f3542;  /* 深色背景 */
+  background-color:rgb(255, 0, 0);  /* 深色背景 */
   border-radius: 50%;         /* 圆形边框 */
   z-index: 2;                 /* 层级2 */
   box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 阴影效果 */
