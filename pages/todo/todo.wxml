@@ -39,12 +39,8 @@
         <view class="todo-right">
           <text class="todo-time">{{item.time}}</text>
           <view class="action-buttons">
-            <view class="complete-btn" bindtap="toggleComplete" data-index="{{index}}">
-              <text class="iconfont icon-check"></text>
-            </view>
-            <view class="delete-btn" bindtap="deleteTodo" data-index="{{index}}">
-              <text class="iconfont icon-delete"></text>
-            </view>
+            <view class="complete-btn" bindtap="toggleComplete" data-index="{{index}}"></view>
+            <view class="delete-btn" bindtap="deleteTodo" data-index="{{index}}"></view>
           </view>
         </view>
       </view>

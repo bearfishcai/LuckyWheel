@@ -20,9 +20,6 @@
     </view>
   </view>
 
-  <!-- 结果显示 -->
-  <view class="result" wx:if="{{result}}">结果：{{result}}</view>
-
   <!-- 操作按钮 -->
   <view class="button-group">
     <button class="spin-btn" bindtap="startSpin" disabled="{{rotating || options.length < 2}}">

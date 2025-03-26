@@ -43,15 +43,8 @@ Page({
     }
 
     const now = new Date();
-    const currentTime = now.toLocaleTimeString('zh-CN', { 
-      hour: 'numeric', 
-      minute: 'numeric',
-      hour12: false 
-    });
-    const currentDate = now.toLocaleDateString('zh-CN', {
-      month: 'numeric',
-      day: 'numeric'
-    });
+    const currentTime = now.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+    const currentDate = now.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' });
 
     const todos = this.data.todos;
     todos.push({
